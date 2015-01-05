@@ -12,7 +12,6 @@
 		43D289631A59D3DF00E86718 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D289621A59D3DF00E86718 /* ViewController.m */; };
 		43D289661A59D3DF00E86718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D289641A59D3DF00E86718 /* Main.storyboard */; };
 		43D289681A59D3DF00E86718 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D289671A59D3DF00E86718 /* Images.xcassets */; };
-		43D2896B1A59D3DF00E86718 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43D289691A59D3DF00E86718 /* LaunchScreen.xib */; };
 		43D289771A59D3DF00E86718 /* H_R_Block_SurveyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D289761A59D3DF00E86718 /* H_R_Block_SurveyTests.m */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +35,6 @@
 		43D289621A59D3DF00E86718 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		43D289651A59D3DF00E86718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43D289671A59D3DF00E86718 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		43D2896A1A59D3DF00E86718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		43D289701A59D3DF00E86718 /* H&R Block SurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "H&R Block SurveyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D289751A59D3DF00E86718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D289761A59D3DF00E86718 /* H_R_Block_SurveyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = H_R_Block_SurveyTests.m; sourceTree = "<group>"; };
@@ -87,7 +85,6 @@
 				43D289621A59D3DF00E86718 /* ViewController.m */,
 				43D289641A59D3DF00E86718 /* Main.storyboard */,
 				43D289671A59D3DF00E86718 /* Images.xcassets */,
-				43D289691A59D3DF00E86718 /* LaunchScreen.xib */,
 				43D2895A1A59D3DF00E86718 /* Supporting Files */,
 			);
 			path = "H&R Block Survey";
@@ -201,7 +198,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D289661A59D3DF00E86718 /* Main.storyboard in Resources */,
-				43D2896B1A59D3DF00E86718 /* LaunchScreen.xib in Resources */,
 				43D289681A59D3DF00E86718 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,14 +247,6 @@
 				43D289651A59D3DF00E86718 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		43D289691A59D3DF00E86718 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				43D2896A1A59D3DF00E86718 /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
