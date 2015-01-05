@@ -52,15 +52,24 @@
 
 - (void)animatedHomeTransition:(UIButton *)sender {
     
-    if (sender.tag) {
-        [UIView animateWithDuration:.5 animations:^{
+    if (sender.tag) {                                   // if chosen language is english
+        [UIView animateWithDuration:.25 animations:^{
             self.spanishButton.alpha = 0;
             self.chooseLanguageImage.alpha = 0;
         }];
-    } else {
-        [UIView animateWithDuration:.5 animations:^{
+        
+        [UIView animateWithDuration:.55 animations:^{
+            self.englishButton.alpha = 0;
+        }];
+        
+    } else {                                            // if chosen language is spanish
+        [UIView animateWithDuration:.25 animations:^{
             self.englishButton.alpha = 0;
             self.chooseLanguageImage.alpha = 0;
+        }];
+        
+        [UIView animateWithDuration:.55 animations:^{
+            self.spanishButton.alpha = 0;
         }];
     }
     
