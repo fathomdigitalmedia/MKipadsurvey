@@ -76,11 +76,22 @@
                     <view key="view" contentMode="scaleToFill" id="wf3-6e-zx7">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.4431372549" green="0.70588235290000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="survey_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="KCR-Ah-ars">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64d-D7-dcX">
+                                <rect key="frame" x="50" y="132" width="768" height="693"/>
+                                <color key="backgroundColor" red="0.4431372549" green="0.70588235290000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="surveyBG" destination="64d-D7-dcX" id="NfO-p6-sp5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cio-JO-cL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,5 +105,6 @@
         <image name="attract_logo.png" width="222" height="222"/>
         <image name="attract_spanish.png" width="328" height="196"/>
         <image name="attract_title.png" width="1359" height="621"/>
+        <image name="survey_bg.png" width="1536" height="2048"/>
     </resources>
 </document>
