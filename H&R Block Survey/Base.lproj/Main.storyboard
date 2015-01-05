@@ -53,16 +53,22 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="6vF-LB-Ux5" id="0Zi-xi-pnf"/>
+                        <outlet property="chooseLanguageImage" destination="u05-lD-0DI" id="WWr-Eh-7Ze"/>
+                        <outlet property="englishButton" destination="vEJ-cV-VeA" id="ZOU-WU-c4h"/>
+                        <outlet property="logoImage" destination="OWj-ff-JX0" id="OfM-Vh-Kjk"/>
+                        <outlet property="spanishButton" destination="2Ev-un-93S" id="jWi-oq-6Ik"/>
+                        <outlet property="titleImage" destination="bIG-bf-DmZ" id="bc9-Db-6ds"/>
                         <segue destination="R6x-4n-kMl" kind="showDetail" identifier="segueToSurvey1" id="OlU-m5-lL9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Survey1 View Controller-->
+        <!--Survey View Controller-->
         <scene sceneID="6mJ-Lh-8Co">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="R6x-4n-kMl" customClass="Survey1ViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="R6x-4n-kMl" customClass="SurveyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uIa-p8-M0N"/>
                         <viewControllerLayoutGuide type="bottom" id="uZP-RF-fdF"/>
@@ -78,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cio-JO-cL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1383" y="317"/>
+            <point key="canvasLocation" x="1507" y="374"/>
         </scene>
     </scenes>
     <resources>

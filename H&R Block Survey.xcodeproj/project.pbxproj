@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		435B876E1A5B3785004176CC /* AttractorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435B876B1A5B3785004176CC /* AttractorViewController.m */; };
-		435B876F1A5B3785004176CC /* Survey1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435B876D1A5B3785004176CC /* Survey1ViewController.m */; };
+		435B876F1A5B3785004176CC /* SurveyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435B876D1A5B3785004176CC /* SurveyViewController.m */; };
 		435B87761A5B3793004176CC /* attract_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87701A5B3793004176CC /* attract_bg.png */; };
 		435B87771A5B3793004176CC /* attract_choose_lang.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87711A5B3793004176CC /* attract_choose_lang.png */; };
 		435B87781A5B3793004176CC /* attract_english.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87721A5B3793004176CC /* attract_english.png */; };
@@ -35,8 +35,8 @@
 /* Begin PBXFileReference section */
 		435B876A1A5B3785004176CC /* AttractorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractorViewController.h; sourceTree = "<group>"; };
 		435B876B1A5B3785004176CC /* AttractorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttractorViewController.m; sourceTree = "<group>"; };
-		435B876C1A5B3785004176CC /* Survey1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Survey1ViewController.h; sourceTree = "<group>"; };
-		435B876D1A5B3785004176CC /* Survey1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Survey1ViewController.m; sourceTree = "<group>"; };
+		435B876C1A5B3785004176CC /* SurveyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyViewController.h; sourceTree = "<group>"; };
+		435B876D1A5B3785004176CC /* SurveyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyViewController.m; sourceTree = "<group>"; };
 		435B87701A5B3793004176CC /* attract_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_bg.png; sourceTree = "<group>"; };
 		435B87711A5B3793004176CC /* attract_choose_lang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_choose_lang.png; sourceTree = "<group>"; };
 		435B87721A5B3793004176CC /* attract_english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_english.png; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 			children = (
 				435B876A1A5B3785004176CC /* AttractorViewController.h */,
 				435B876B1A5B3785004176CC /* AttractorViewController.m */,
-				435B876C1A5B3785004176CC /* Survey1ViewController.h */,
-				435B876D1A5B3785004176CC /* Survey1ViewController.m */,
+				435B876C1A5B3785004176CC /* SurveyViewController.h */,
+				435B876D1A5B3785004176CC /* SurveyViewController.m */,
 				43D2895E1A59D3DF00E86718 /* AppDelegate.h */,
 				43D2895F1A59D3DF00E86718 /* AppDelegate.m */,
 				43D289641A59D3DF00E86718 /* Main.storyboard */,
@@ -255,7 +255,7 @@
 			files = (
 				43D289601A59D3DF00E86718 /* AppDelegate.m in Sources */,
 				43D2895D1A59D3DF00E86718 /* main.m in Sources */,
-				435B876F1A5B3785004176CC /* Survey1ViewController.m in Sources */,
+				435B876F1A5B3785004176CC /* SurveyViewController.m in Sources */,
 				435B876E1A5B3785004176CC /* AttractorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

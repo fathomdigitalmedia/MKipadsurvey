@@ -1,5 +1,5 @@
 //
-//  Survey1ViewController.h
+//  SurveyViewController.h
 //  H&R Block Survey
 //
 //  Created by Patrick Shea on 1/5/15.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Survey1ViewController : UIViewController
+@interface SurveyViewController : UIViewController
+
+@property BOOL inEnglish;
 
 @end
