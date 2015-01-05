@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		435B876E1A5B3785004176CC /* AttractorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435B876B1A5B3785004176CC /* AttractorViewController.m */; };
+		435B876F1A5B3785004176CC /* Survey1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 435B876D1A5B3785004176CC /* Survey1ViewController.m */; };
+		435B87761A5B3793004176CC /* attract_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87701A5B3793004176CC /* attract_bg.png */; };
+		435B87771A5B3793004176CC /* attract_choose_lang.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87711A5B3793004176CC /* attract_choose_lang.png */; };
+		435B87781A5B3793004176CC /* attract_english.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87721A5B3793004176CC /* attract_english.png */; };
+		435B87791A5B3793004176CC /* attract_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87731A5B3793004176CC /* attract_logo.png */; };
+		435B877A1A5B3793004176CC /* attract_spanish.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87741A5B3793004176CC /* attract_spanish.png */; };
+		435B877B1A5B3793004176CC /* attract_title.png in Resources */ = {isa = PBXBuildFile; fileRef = 435B87751A5B3793004176CC /* attract_title.png */; };
 		43D2895D1A59D3DF00E86718 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D2895C1A59D3DF00E86718 /* main.m */; };
 		43D289601A59D3DF00E86718 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D2895F1A59D3DF00E86718 /* AppDelegate.m */; };
-		43D289631A59D3DF00E86718 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D289621A59D3DF00E86718 /* ViewController.m */; };
 		43D289661A59D3DF00E86718 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D289641A59D3DF00E86718 /* Main.storyboard */; };
 		43D289681A59D3DF00E86718 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D289671A59D3DF00E86718 /* Images.xcassets */; };
 		43D289771A59D3DF00E86718 /* H_R_Block_SurveyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D289761A59D3DF00E86718 /* H_R_Block_SurveyTests.m */; };
@@ -26,13 +33,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		435B876A1A5B3785004176CC /* AttractorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttractorViewController.h; sourceTree = "<group>"; };
+		435B876B1A5B3785004176CC /* AttractorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttractorViewController.m; sourceTree = "<group>"; };
+		435B876C1A5B3785004176CC /* Survey1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Survey1ViewController.h; sourceTree = "<group>"; };
+		435B876D1A5B3785004176CC /* Survey1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Survey1ViewController.m; sourceTree = "<group>"; };
+		435B87701A5B3793004176CC /* attract_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_bg.png; sourceTree = "<group>"; };
+		435B87711A5B3793004176CC /* attract_choose_lang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_choose_lang.png; sourceTree = "<group>"; };
+		435B87721A5B3793004176CC /* attract_english.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_english.png; sourceTree = "<group>"; };
+		435B87731A5B3793004176CC /* attract_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_logo.png; sourceTree = "<group>"; };
+		435B87741A5B3793004176CC /* attract_spanish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_spanish.png; sourceTree = "<group>"; };
+		435B87751A5B3793004176CC /* attract_title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = attract_title.png; sourceTree = "<group>"; };
 		43D289571A59D3DF00E86718 /* H&R Block Survey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "H&R Block Survey.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D2895B1A59D3DF00E86718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43D2895C1A59D3DF00E86718 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		43D2895E1A59D3DF00E86718 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43D2895F1A59D3DF00E86718 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		43D289611A59D3DF00E86718 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		43D289621A59D3DF00E86718 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		43D289651A59D3DF00E86718 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43D289671A59D3DF00E86718 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43D289701A59D3DF00E86718 /* H&R Block SurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "H&R Block SurveyTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +73,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		435B877C1A5B3799004176CC /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				435B87701A5B3793004176CC /* attract_bg.png */,
+				435B87711A5B3793004176CC /* attract_choose_lang.png */,
+				435B87721A5B3793004176CC /* attract_english.png */,
+				435B87731A5B3793004176CC /* attract_logo.png */,
+				435B87741A5B3793004176CC /* attract_spanish.png */,
+				435B87751A5B3793004176CC /* attract_title.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		43D2894E1A59D3DF00E86718 = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +107,15 @@
 		43D289591A59D3DF00E86718 /* H&R Block Survey */ = {
 			isa = PBXGroup;
 			children = (
+				435B876A1A5B3785004176CC /* AttractorViewController.h */,
+				435B876B1A5B3785004176CC /* AttractorViewController.m */,
+				435B876C1A5B3785004176CC /* Survey1ViewController.h */,
+				435B876D1A5B3785004176CC /* Survey1ViewController.m */,
 				43D2895E1A59D3DF00E86718 /* AppDelegate.h */,
 				43D2895F1A59D3DF00E86718 /* AppDelegate.m */,
-				43D289611A59D3DF00E86718 /* ViewController.h */,
-				43D289621A59D3DF00E86718 /* ViewController.m */,
 				43D289641A59D3DF00E86718 /* Main.storyboard */,
 				43D289671A59D3DF00E86718 /* Images.xcassets */,
+				435B877C1A5B3799004176CC /* Images */,
 				43D2895A1A59D3DF00E86718 /* Supporting Files */,
 			);
 			path = "H&R Block Survey";
@@ -197,7 +228,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				435B877B1A5B3793004176CC /* attract_title.png in Resources */,
 				43D289661A59D3DF00E86718 /* Main.storyboard in Resources */,
+				435B87781A5B3793004176CC /* attract_english.png in Resources */,
+				435B87761A5B3793004176CC /* attract_bg.png in Resources */,
+				435B877A1A5B3793004176CC /* attract_spanish.png in Resources */,
+				435B87771A5B3793004176CC /* attract_choose_lang.png in Resources */,
+				435B87791A5B3793004176CC /* attract_logo.png in Resources */,
 				43D289681A59D3DF00E86718 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,9 +253,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D289631A59D3DF00E86718 /* ViewController.m in Sources */,
 				43D289601A59D3DF00E86718 /* AppDelegate.m in Sources */,
 				43D2895D1A59D3DF00E86718 /* main.m in Sources */,
+				435B876F1A5B3785004176CC /* Survey1ViewController.m in Sources */,
+				435B876E1A5B3785004176CC /* AttractorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
