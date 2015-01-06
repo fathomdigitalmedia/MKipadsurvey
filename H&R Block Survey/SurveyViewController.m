@@ -33,14 +33,53 @@
     self.currentQuestion = 0;
     self.totalQuestions = [self.survey.surveyQuestions count];
         
-    [self updateQuestionLabels];
+    [self updateUI];
     
 }
 
+- (void) updateUI {
+    [self updateQuestionLabels];
+    [self updateQuestionOptions];
+}
+
 - (void)updateQuestionLabels {
-    self.questionNumberLabel.text = [NSString stringWithFormat:@"QUESTION %d OF %d", self.currentQuestion + 1, self.totalQuestions];
+    
+    NSString *questionString = @"";
+    NSString *ofString = @"";
+    
+    if (self.inEnglish) {
+        questionString = @"QUESTION";
+        ofString = @"OF";
+    } else {
+        questionString = @"PREGUNTA";
+        ofString = @"DE";
+    }
+    
+    self.questionNumberLabel.text = [NSString stringWithFormat:@"%@ %d %@ %d", questionString, self.currentQuestion + 1, ofString, self.totalQuestions];
     self.questionLabel.text = self.survey.surveyQuestions[self.inEnglish][self.currentQuestion];
 }
+
+- (void)updateQuestionOptions {
+    int count = 1;
+    
+    for (NSString *option in self.survey.surveyOptions[self.inEnglish][self.currentQuestion]) {
+        NSLog(@"option %d: %@", count, option);
+        count++;
+    }
+    
+}
+
+- (IBAction)surveyNext:(UIButton *)sender {
+    if (self.currentQuestion + 1 < self.totalQuestions) {
+        self.currentQuestion++;
+        [self updateUI];
+    } else {
+        NSLog(@"last question");
+        // write data to file
+        // jump to thank you screen
+    }
+}
+
 
 
 - (void)viewDidAppear:(BOOL)animated {

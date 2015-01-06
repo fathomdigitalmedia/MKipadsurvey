@@ -106,6 +106,16 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.4431372549" green="0.70588235290000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODz-JW-RwG">
+                                <rect key="frame" x="305" y="869" width="158" height="91"/>
+                                <state key="normal" image="survey_next.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="languageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAN-tZ-fvN"/>
+                                    <action selector="surveyNext:" destination="R6x-4n-kMl" eventType="touchUpInside" id="UoJ-U6-JN5"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -130,5 +140,6 @@
         <image name="attract_spanish.png" width="328" height="196"/>
         <image name="attract_title.png" width="1359" height="621"/>
         <image name="survey_bg.png" width="1536" height="2048"/>
+        <image name="survey_next.png" width="316" height="182"/>
     </resources>
 </document>
