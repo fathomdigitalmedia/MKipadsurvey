@@ -133,8 +133,6 @@
 				435B876B1A5B3785004176CC /* AttractorViewController.m */,
 				435B876C1A5B3785004176CC /* SurveyViewController.h */,
 				435B876D1A5B3785004176CC /* SurveyViewController.m */,
-				43D2895E1A59D3DF00E86718 /* AppDelegate.h */,
-				43D2895F1A59D3DF00E86718 /* AppDelegate.m */,
 				43D289641A59D3DF00E86718 /* Main.storyboard */,
 				43361F031A5B8F8600351395 /* HRBlockSurvey.h */,
 				43361F041A5B8F8600351395 /* HRBlockSurvey.m */,
@@ -149,6 +147,8 @@
 		43D2895A1A59D3DF00E86718 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				43D2895E1A59D3DF00E86718 /* AppDelegate.h */,
+				43D2895F1A59D3DF00E86718 /* AppDelegate.m */,
 				43D2895B1A59D3DF00E86718 /* Info.plist */,
 				43D2895C1A59D3DF00E86718 /* main.m */,
 			);

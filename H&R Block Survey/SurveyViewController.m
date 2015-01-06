@@ -7,12 +7,16 @@
 //
 
 #import "SurveyViewController.h"
-// #import "Survey2ViewController.h"
+#import "HRBlockSurvey.h"
 
 @interface SurveyViewController ()
+
 @property (weak, nonatomic) IBOutlet UIView *surveyBG;
 @property (weak, nonatomic) IBOutlet UILabel *questionNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (strong, nonatomic) HRBlockSurvey *survey;
+@property NSUInteger currentQuestion;
+@property NSUInteger totalQuestions;
 
 @end
 
@@ -24,33 +28,31 @@
     
     // init survey object (UID, question strings (en, sp), pretty date string, data file name, etc)
     
+    self.survey = [[HRBlockSurvey alloc] init];
+    
+    self.currentQuestion = 0;
+    self.totalQuestions = [self.survey.surveyQuestions count];
+        
+    [self updateQuestionLabels];
     
 }
 
-- (void)viewWillLayoutSubviews {
-
+- (void)updateQuestionLabels {
+    self.questionNumberLabel.text = [NSString stringWithFormat:@"QUESTION %d OF %d", self.currentQuestion + 1, self.totalQuestions];
+    self.questionLabel.text = self.survey.surveyQuestions[self.inEnglish][self.currentQuestion];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-
-    
-}
 
 - (void)viewDidAppear:(BOOL)animated {
 
     // check that screen visual elements are visible and in the proper x,y positions (after segue unwind)
+    // [ where best to do this? ]d
     
 
     // animate elements onscreen
     
     [self animateOnLoad];
 
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the survey object to the new view controller.
-    
 }
 
 - (void)animateOnLoad {
@@ -65,7 +67,6 @@
     }completion:^(BOOL finished) {
         // slide in survey question and options from left
     
-        
         
     }];
     
