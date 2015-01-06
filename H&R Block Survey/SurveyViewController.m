@@ -11,6 +11,8 @@
 
 @interface SurveyViewController ()
 @property (weak, nonatomic) IBOutlet UIView *surveyBG;
+@property (weak, nonatomic) IBOutlet UILabel *questionNumberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *questionLabel;
 
 @end
 
@@ -21,14 +23,27 @@
     // NSLog(@"Survey language is English? %hhd", self.inEnglish);
     
     // init survey object (UID, question strings (en, sp), pretty date string, data file name, etc)
-    // animate survey view elements on screen
     
-    [self animateOnLoad];
     
 }
 
+- (void)viewWillLayoutSubviews {
+
+}
+
 - (void)viewWillAppear:(BOOL)animated {
-    // add code to check that screen visual elements are visible and in the proper x,y positions (after segue unwind)
+
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+
+    // check that screen visual elements are visible and in the proper x,y positions (after segue unwind)
+    
+
+    // animate elements onscreen
+    
+    [self animateOnLoad];
 
 }
 
@@ -39,15 +54,22 @@
 }
 
 - (void)animateOnLoad {
-    NSLog(@"animateOnLoad survey x = %f", self.surveyBG.frame.origin.x);
+    // slide in green background from right
     
-    [UIView animateWithDuration:5 animations:^{
-        NSLog(@"animateOnLoad animation block");
+    [UIView animateWithDuration:.25 animations:^{
         CGRect surveyBGFrame = self.surveyBG.frame;
         surveyBGFrame.origin.x = 0;
         self.surveyBG.frame = surveyBGFrame;
-        self.surveyBG.alpha = 0;
+        // self.surveyBG.alpha = 1;
+
+    }completion:^(BOOL finished) {
+        // slide in survey question and options from left
+    
+        
+        
     }];
+    
+
 }
 
 

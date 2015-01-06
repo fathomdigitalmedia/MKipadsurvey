@@ -24,12 +24,27 @@
 @implementation AttractorViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    // add code to check that attract screen visual elements are visible and in the proper x,y positions (after segue unwind)
+    // confirm that attract screen visual elements are visible and in the proper x,y positions (after segue unwind)
+    
+    CGRect titleFrame = self.titleImage.frame;
+    CGRect logoFrame = self.logoImage.frame;
+    CGRect bgFrame = self.backgroundImage.frame;
+    titleFrame.origin.y = 89;
+    logoFrame.origin.y = 885;
+    bgFrame.origin.y = 0;
+    self.titleImage.frame = titleFrame;
+    self.logoImage.frame = logoFrame;
+    self.backgroundImage.frame = bgFrame;
+    self.titleImage.alpha = 1;
+    self.backgroundImage.alpha = 1;
+    self.logoImage.alpha = 1;
+    
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
 }
 
 - (IBAction)languageButtonPressed:(UIButton *)sender {

@@ -3,6 +3,14 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Brandon_bld.otf">
+            <string>BrandonGrotesque-Bold</string>
+        </mutableArray>
+        <mutableArray key="Brandon_blk.otf">
+            <string>BrandonGrotesque-Black</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Attractor View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -81,7 +89,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64d-D7-dcX">
-                                <rect key="frame" x="50" y="132" width="768" height="693"/>
+                                <rect key="frame" x="0.0" y="132" width="768" height="693"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUESTION X OF Y" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meC-pf-8up">
+                                        <rect key="frame" x="41" y="36" width="112" height="21"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Black" family="Brandon Grotesque" pointSize="12.5"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="When you receive a tax refund, what do you typically spend it on? Please select all that apply." lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="686" translatesAutoresizingMaskIntoConstraints="NO" id="SXX-XX-akR">
+                                        <rect key="frame" x="41" y="49" width="686" height="100"/>
+                                        <fontDescription key="fontDescription" name="BrandonGrotesque-Bold" family="Brandon Grotesque" pointSize="33"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="0.4431372549" green="0.70588235290000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
@@ -90,6 +112,8 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
                     <connections>
+                        <outlet property="questionLabel" destination="SXX-XX-akR" id="sBC-rP-FgN"/>
+                        <outlet property="questionNumberLabel" destination="meC-pf-8up" id="H3C-Mn-k0c"/>
                         <outlet property="surveyBG" destination="64d-D7-dcX" id="NfO-p6-sp5"/>
                     </connections>
                 </viewController>
