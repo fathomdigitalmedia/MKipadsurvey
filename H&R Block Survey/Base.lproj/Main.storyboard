@@ -24,7 +24,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="6vF-LB-Ux5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_bg2.png" translatesAutoresizingMaskIntoConstraints="NO" id="6vF-LB-Ux5">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="bIG-bf-DmZ">
@@ -134,7 +134,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="attract_bg.png" width="768" height="1024"/>
+        <image name="attract_bg2.png" width="768" height="1024"/>
         <image name="attract_choose_lang.png" width="330" height="40"/>
         <image name="attract_english.png" width="164" height="98"/>
         <image name="attract_logo.png" width="111" height="111"/>
