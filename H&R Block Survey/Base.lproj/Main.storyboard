@@ -125,21 +125,22 @@
                         <outlet property="questionLabel" destination="SXX-XX-akR" id="sBC-rP-FgN"/>
                         <outlet property="questionNumberLabel" destination="meC-pf-8up" id="H3C-Mn-k0c"/>
                         <outlet property="surveyBG" destination="64d-D7-dcX" id="NfO-p6-sp5"/>
+                        <outlet property="surveyView" destination="64d-D7-dcX" id="kAg-jQ-X20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cio-JO-cL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1507" y="374"/>
+            <point key="canvasLocation" x="2075" y="277"/>
         </scene>
     </scenes>
     <resources>
-        <image name="attract_bg.png" width="1536" height="2048"/>
-        <image name="attract_choose_lang.png" width="661" height="81"/>
-        <image name="attract_english.png" width="328" height="196"/>
-        <image name="attract_logo.png" width="222" height="222"/>
-        <image name="attract_spanish.png" width="328" height="196"/>
-        <image name="attract_title.png" width="1359" height="621"/>
-        <image name="survey_bg.png" width="1536" height="2048"/>
-        <image name="survey_next.png" width="316" height="182"/>
+        <image name="attract_bg.png" width="768" height="1024"/>
+        <image name="attract_choose_lang.png" width="330" height="40"/>
+        <image name="attract_english.png" width="164" height="98"/>
+        <image name="attract_logo.png" width="111" height="111"/>
+        <image name="attract_spanish.png" width="164" height="98"/>
+        <image name="attract_title.png" width="679" height="310"/>
+        <image name="survey_bg.png" width="768" height="1024"/>
+        <image name="survey_next.png" width="158" height="91"/>
     </resources>
 </document>
