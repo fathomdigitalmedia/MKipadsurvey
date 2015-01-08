@@ -106,13 +106,12 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.4431372549" green="0.70588235290000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODz-JW-RwG">
+                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODz-JW-RwG">
                                 <rect key="frame" x="305" y="869" width="158" height="91"/>
                                 <state key="normal" image="survey_next.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="languageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oAN-tZ-fvN"/>
                                     <action selector="surveyNext:" destination="R6x-4n-kMl" eventType="touchUpInside" id="UoJ-U6-JN5"/>
                                 </connections>
                             </button>
@@ -125,6 +124,7 @@
                         <outlet property="questionLabel" destination="SXX-XX-akR" id="sBC-rP-FgN"/>
                         <outlet property="questionNumberLabel" destination="meC-pf-8up" id="H3C-Mn-k0c"/>
                         <outlet property="surveyBG" destination="64d-D7-dcX" id="NfO-p6-sp5"/>
+                        <outlet property="surveyNextButton" destination="ODz-JW-RwG" id="yW3-nz-8rg"/>
                         <outlet property="surveyView" destination="64d-D7-dcX" id="kAg-jQ-X20"/>
                     </connections>
                 </viewController>

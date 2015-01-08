@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *surveyView;
 @property (weak, nonatomic) IBOutlet UILabel *questionNumberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
+@property (weak, nonatomic) IBOutlet UIButton *surveyNextButton;
 @property (strong, nonatomic) HRBlockSurvey *survey;
 @property NSUInteger currentQuestion;
 @property NSUInteger totalQuestions;
@@ -170,13 +171,25 @@
             [sender setImage:buttonImage forState:UIControlStateNormal];
             sender.contentEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
             sender.titleEdgeInsets = UIEdgeInsetsMake(0, 21, 0, 0);
+            self.surveyNextButton.hidden = NO;
         } else {
             UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg1.png"];
             [sender setImage:buttonImage forState:UIControlStateNormal];
             sender.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
             sender.titleEdgeInsets = UIEdgeInsetsMake(0, 35, 0, 0);
+            
+            for (UIButton *button in self.surveyButtons) {
+                if ( [button.currentImage isEqual:[UIImage imageNamed:@"survey_option_bg2.png"]] ) {
+                    self.surveyNextButton.hidden = NO;
+                    break;
+                } else {
+                    self.surveyNextButton.hidden = YES;
+                }
+            }
+            
         }
     }
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
