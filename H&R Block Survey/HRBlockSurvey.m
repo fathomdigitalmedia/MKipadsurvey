@@ -85,7 +85,7 @@
                                  @"ESP: A surprise gift for a family member or friend",
                                  @"ESP: A new car",
                                  @"ESP: Sports or concert tickets",
-                                 @"OESP: ther",
+                                 @"ESP: Other",
                                  @"ESP: None",
                                  nil];
         
@@ -115,16 +115,23 @@
     return self;
 }
 
-- (NSUInteger*)createUID {
-    //stub
+- (NSString *)createUID {
     
-    return 0;
+    NSDate *now = [NSDate date];
+    NSUInteger tmpUID = [now timeIntervalSince1970];
+    NSString *uid = [NSString stringWithFormat:@"%d,", tmpUID];
+    
+    return uid;
 }
 
-- (NSDate*)createSurveyDate {
-    //stub
+- (NSString*)createSurveyDate {
+
+    NSDate *now = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yy.MM.dd HH:mm zzz"];
+  
+    return [NSString stringWithFormat:@"%@,", [dateFormatter stringFromDate:now]];
     
-    return 0;
 }
 
 

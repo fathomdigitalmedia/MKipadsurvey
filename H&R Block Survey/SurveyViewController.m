@@ -36,8 +36,8 @@
     self.currentQuestion = 0;
     self.totalQuestions = [self.survey.surveyQuestions count];
     self.surveyButtons = [[NSMutableArray alloc] init];
-    self.dataString = [[NSMutableString alloc] init];
-    [self.dataString appendString:@"[ ADD DATE ] , [ ADD UID ] ,"];
+    self.dataString = [[NSMutableString alloc] initWithString:self.survey.surveyDateTaken];
+    [self.dataString appendString:self.survey.UID];
         
     [self updateUI];
     
@@ -113,7 +113,7 @@
         // remove trailing pipe character from end of selected options
         [self.dataString replaceCharactersInRange:NSMakeRange(self.dataString.length - 1, 1) withString:@","];
         
-        NSLog(@"options selected: %@", self.dataString);
+        NSLog(@"dataString contents: %@", self.dataString);
        
         [self updateUI];
         
