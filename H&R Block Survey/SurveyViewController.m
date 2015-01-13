@@ -91,6 +91,19 @@
         [self.surveyButtons addObject:button];
         [self.surveyView addSubview:button];
         
+        if (self.currentQuestion) { // style 2, question array [1]
+            UILabel *buttonLetterLabel = [[UILabel alloc] initWithFrame:CGRectMake(25, -2, 50, 50)];
+            
+            [buttonLetterLabel setTextColor:[UIColor whiteColor]];
+            [buttonLetterLabel setFont:[UIFont fontWithName:@"BrandonGrotesque-Black" size:23.0]];
+            
+            // NEXT
+            // char labelChar = "A";
+            
+            buttonLetterLabel.text = @"A.";
+            [button addSubview:buttonLetterLabel];
+        }
+        
         buttonY = buttonY + buttonHeight + buttonSpacing;
         index++;
     }
@@ -129,25 +142,31 @@
 - (UIButton*)makeOptionButton:(NSString*)option usingButtonStyle:(NSUInteger)style {
     UIButton *button = [[UIButton alloc] init];
 
-    // style changes:
-    // buttonImage: style 0 has image, style 1 has no image (or has rounded rect bg image? TBD)
-
-    if (style) {
-        // style "1" here
-        
-    } else {
-        // style "2" here
-    }
     [button setTitle:option forState: UIControlStateNormal];
     [button setTitleColor: [UIColor whiteColor] forState: UIControlStateNormal];
     button.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
     button.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
-    button.titleEdgeInsets = UIEdgeInsetsMake(0, 35, 0, 0);
     button.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    
     button.titleLabel.font = [UIFont fontWithName:@"BrandonGrotesque-Regular" size:20.0];
-    UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg1.png"];
-    [button setImage:buttonImage forState:UIControlStateNormal];
+    
+    // style variations:
+    // buttonImage: style 0 has image, style 1 has rounded rect BG image
+    
+    if (style) {
+        // style "1" here (question array index [1])
+        UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg3.png"];
+        [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, 50, 0, 0);
 
+    } else {
+        // style "2" here (question array index [0])
+        UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg1.png"];
+        [button setImage:buttonImage forState:UIControlStateNormal];
+        button.titleEdgeInsets = UIEdgeInsetsMake(0, 35, 0, 0);
+
+    }
+    
     [button addTarget: self
                action: @selector(surveyButtonClicked:)
      forControlEvents: UIControlEventTouchUpInside];
@@ -163,9 +182,41 @@
     // update to handle multiple button styles
     
     if (style) {
-        // style "1" here
+        // style "1" here (question array index [1])
+
+        // swap BG images
+        if ( [sender.currentBackgroundImage isEqual:[UIImage imageNamed:@"survey_option_bg3.png"]] ) {
+            NSLog(@"select option, change BG");
+            UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg4.png"];
+            [sender setBackgroundImage:buttonImage forState:UIControlStateNormal];
+            
+            // reset all other buttons to deselected state -- this style allows only one option selection
+            for (UIButton *button in self.surveyButtons) {
+                if ( [button.currentBackgroundImage isEqual:[UIImage imageNamed:@"survey_option_bg4.png"]] && !([button isEqual:sender]) ) {
+                    [button setBackgroundImage:[UIImage imageNamed:@"survey_option_bg3.png" ] forState:UIControlStateNormal];
+                }
+            }
+            self.surveyNextButton.hidden = NO;
+ 
+        } else {
+            UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg3.png"];
+            [sender setBackgroundImage:buttonImage forState:UIControlStateNormal];
+            // sender.contentEdgeInsets = UIEdgeInsetsMake(0, 15, 0, 0);
+            // sender.titleEdgeInsets = UIEdgeInsetsMake(0, 35, 0, 0);
+            
+            for (UIButton *button in self.surveyButtons) {
+                if ( [button.currentBackgroundImage isEqual:[UIImage imageNamed:@"survey_option_bg4.png"]] ) {
+                    self.surveyNextButton.hidden = NO;
+                    break;
+                } else {
+                    self.surveyNextButton.hidden = YES;
+                }
+            }
+        }
+
+        
     } else {
-        // style "2" here
+        // style "2" here (question array index [0])
         if ( [sender.currentImage isEqual:[UIImage imageNamed:@"survey_option_bg1.png"]] ) {
             UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg2.png"];
             [sender setImage:buttonImage forState:UIControlStateNormal];
