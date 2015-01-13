@@ -8,6 +8,7 @@
 
 #import "SurveyViewController.h"
 #import "HRBlockSurvey.h"
+#import "CSVData.h"
 
 @interface SurveyViewController ()
 
@@ -21,6 +22,7 @@
 @property NSUInteger totalQuestions;
 @property (strong, nonatomic) NSMutableArray *surveyButtons;
 @property (strong, nonatomic) NSMutableString *dataString;
+@property (strong, nonatomic) CSVData *csvWriter;
 
 @end
 
@@ -28,17 +30,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // NSLog(@"Survey language is English? %hhd", self.inEnglish);
-    
-    // init survey object (UID, question strings (en, sp), pretty date string, data file name, etc)
     
     self.survey = [[HRBlockSurvey alloc] init];
-    
     self.currentQuestion = 0;
     self.totalQuestions = [self.survey.surveyQuestions count];
     self.surveyButtons = [[NSMutableArray alloc] init];
     self.dataString = [[NSMutableString alloc] initWithString:self.survey.surveyDateTaken];
     [self.dataString appendString:self.survey.UID];
+    self.csvWriter = [[CSVData alloc] init];
         
     [self updateUI];
     
@@ -97,10 +96,10 @@
             [buttonLetterLabel setTextColor:[UIColor whiteColor]];
             [buttonLetterLabel setFont:[UIFont fontWithName:@"BrandonGrotesque-Black" size:23.0]];
             
-            // NEXT
-            // char labelChar = "A";
+            unichar labelChar = 'A';
+            labelChar += index;
             
-            buttonLetterLabel.text = @"A.";
+            buttonLetterLabel.text = [NSString stringWithFormat:@"%C.", labelChar];
             [button addSubview:buttonLetterLabel];
         }
         
@@ -113,12 +112,12 @@
 - (IBAction)surveyNext:(UIButton *)sender {
     if (self.currentQuestion + 1 < self.totalQuestions) {
         self.currentQuestion++;
-        // update self.dataString
-        
+       
+        // update self.dataString for Q1
         int index = 0;
         
         for (UIButton *button in self.surveyButtons) {
-            if ( [button.currentImage isEqual:[UIImage imageNamed:@"survey_option_bg2.png"]] ) { // add OR statement for style 2
+            if ( [button.currentImage isEqual:[UIImage imageNamed:@"survey_option_bg2.png"]] ) {
                 [self.dataString appendString:[NSString stringWithFormat:@"%d|", index + 1]];
             }
             index++;
@@ -127,15 +126,32 @@
         // remove trailing pipe character from end of selected options
         [self.dataString replaceCharactersInRange:NSMakeRange(self.dataString.length - 1, 1) withString:@","];
         
-        NSLog(@"dataString contents: %@", self.dataString);
+        // NSLog(@"dataString contents: %@", self.dataString);
        
         [self updateUI];
         
     } else {
-        NSLog(@"last question");
+        // NSLog(@"last question");
+
+        // update self.dataString for Q2
+        int index = 0;
+        unichar labelChar = 'A';
+        
+        for (UIButton *button in self.surveyButtons) {
+            if ( [button.currentBackgroundImage isEqual:[UIImage imageNamed:@"survey_option_bg4.png"]] ) {
+                labelChar += index;
+                [self.dataString appendString:[NSString stringWithFormat:@"%C\n", labelChar]];
+            }
+            index++;
+        }
+ 
+        NSLog(@"dataString contents: %@", self.dataString);
         
         // write self.dataString to file
+        [self.csvWriter updateCSV:self.survey.surveyDataFile withEntry:self.dataString];
+        
         // jump to thank you screen
+        [self performSelector:@selector(beginSegue:) withObject:sender afterDelay:.6];
     }
 }
 
@@ -186,7 +202,6 @@
 
         // swap BG images
         if ( [sender.currentBackgroundImage isEqual:[UIImage imageNamed:@"survey_option_bg3.png"]] ) {
-            NSLog(@"select option, change BG");
             UIImage *buttonImage = [UIImage imageNamed:@"survey_option_bg4.png"];
             [sender setBackgroundImage:buttonImage forState:UIControlStateNormal];
             
@@ -272,6 +287,17 @@
     
 
 }
+
+- (void)beginSegue:(UIButton *)sender {
+    [self performSegueWithIdentifier:@"segueToThankYou" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    SurveyViewController *destinationViewController = [segue destinationViewController];
+    // destinationViewController.inEnglish = self.inEnglish;
+    
+}
+
 
 
 @end

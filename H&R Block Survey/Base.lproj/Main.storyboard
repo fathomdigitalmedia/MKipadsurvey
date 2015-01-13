@@ -126,11 +126,33 @@
                         <outlet property="surveyBG" destination="64d-D7-dcX" id="NfO-p6-sp5"/>
                         <outlet property="surveyNextButton" destination="ODz-JW-RwG" id="yW3-nz-8rg"/>
                         <outlet property="surveyView" destination="64d-D7-dcX" id="kAg-jQ-X20"/>
+                        <segue destination="Jd3-h9-6aA" kind="show" identifier="segueToThankYou" id="a9M-WB-O6L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cio-JO-cL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075" y="277"/>
+            <point key="canvasLocation" x="1589" y="300"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hdW-fz-5T3">
+            <objects>
+                <viewController modalTransitionStyle="crossDissolve" id="Jd3-h9-6aA" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nZr-5w-t60"/>
+                        <viewControllerLayoutGuide type="bottom" id="lnh-ja-4vJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gHG-WG-xJU">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nIa-Dh-P9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629" y="300"/>
         </scene>
     </scenes>
     <resources>

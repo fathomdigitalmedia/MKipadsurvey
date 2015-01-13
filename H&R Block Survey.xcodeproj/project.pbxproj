@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4304A7B11A5CF40700889687 /* survey_option_bg1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4304A7B01A5CF40700889687 /* survey_option_bg1@2x.png */; };
+		431ED63F1A64CC5D002DDFDE /* survey_data.csv in Resources */ = {isa = PBXBuildFile; fileRef = 431ED63E1A64CC5D002DDFDE /* survey_data.csv */; };
+		431ED6421A64CCB9002DDFDE /* CSVData.m in Sources */ = {isa = PBXBuildFile; fileRef = 431ED6411A64CCB9002DDFDE /* CSVData.m */; };
 		43361EFD1A5B84B000351395 /* Brandon_bld.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43361EF71A5B84B000351395 /* Brandon_bld.otf */; };
 		43361EFF1A5B84B000351395 /* Brandon_blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43361EF91A5B84B000351395 /* Brandon_blk.otf */; };
 		43361F011A5B84B000351395 /* Brandon_reg.otf in Resources */ = {isa = PBXBuildFile; fileRef = 43361EFB1A5B84B000351395 /* Brandon_reg.otf */; };
@@ -44,6 +46,9 @@
 
 /* Begin PBXFileReference section */
 		4304A7B01A5CF40700889687 /* survey_option_bg1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "survey_option_bg1@2x.png"; sourceTree = "<group>"; };
+		431ED63E1A64CC5D002DDFDE /* survey_data.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = survey_data.csv; sourceTree = "<group>"; };
+		431ED6401A64CCB9002DDFDE /* CSVData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSVData.h; sourceTree = "<group>"; };
+		431ED6411A64CCB9002DDFDE /* CSVData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVData.m; sourceTree = "<group>"; };
 		43361EF71A5B84B000351395 /* Brandon_bld.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_bld.otf; sourceTree = "<group>"; };
 		43361EF91A5B84B000351395 /* Brandon_blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_blk.otf; sourceTree = "<group>"; };
 		43361EFB1A5B84B000351395 /* Brandon_reg.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Brandon_reg.otf; sourceTree = "<group>"; };
@@ -151,6 +156,9 @@
 				43D289641A59D3DF00E86718 /* Main.storyboard */,
 				43361F031A5B8F8600351395 /* HRBlockSurvey.h */,
 				43361F041A5B8F8600351395 /* HRBlockSurvey.m */,
+				431ED6401A64CCB9002DDFDE /* CSVData.h */,
+				431ED6411A64CCB9002DDFDE /* CSVData.m */,
+				431ED63E1A64CC5D002DDFDE /* survey_data.csv */,
 				43D289671A59D3DF00E86718 /* Images.xcassets */,
 				43361F021A5B84B600351395 /* Fonts */,
 				435B877C1A5B3799004176CC /* Images */,
@@ -272,6 +280,7 @@
 				43361EFF1A5B84B000351395 /* Brandon_blk.otf in Resources */,
 				43D289661A59D3DF00E86718 /* Main.storyboard in Resources */,
 				434E25A71A5DD0B400D807AE /* survey_option_bg2@2x.png in Resources */,
+				431ED63F1A64CC5D002DDFDE /* survey_data.csv in Resources */,
 				43B549BF1A64AC8400E90E63 /* survey_option_bg4@2x.png in Resources */,
 				434E25A91A5DEB4100D807AE /* attract_bg2@2x.png in Resources */,
 				43B08DA91A5C74F7008D0656 /* survey_next@2x.png in Resources */,
@@ -304,6 +313,7 @@
 			files = (
 				43D289601A59D3DF00E86718 /* AppDelegate.m in Sources */,
 				43361F051A5B8F8600351395 /* HRBlockSurvey.m in Sources */,
+				431ED6421A64CCB9002DDFDE /* CSVData.m in Sources */,
 				43D2895D1A59D3DF00E86718 /* main.m in Sources */,
 				435B876F1A5B3785004176CC /* SurveyViewController.m in Sources */,
 				435B876E1A5B3785004176CC /* AttractorViewController.m in Sources */,
