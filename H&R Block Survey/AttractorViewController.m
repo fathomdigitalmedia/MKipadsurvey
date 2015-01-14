@@ -18,6 +18,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *chooseLanguageImage;
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
 
+@property (strong, nonatomic) NSTimer *timeoutTimer;
+// @property (strong, nonatomic) NSDate *lastTimeoutResetEvent;
+// @property NSTimeInterval timeoutLength;
+
+
 
 @end
 
@@ -39,11 +44,16 @@
     self.backgroundImage.alpha = 1;
     self.logoImage.alpha = 1;
     
+    // [self startTimer];
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self.titleImage setImage:[UIImage imageNamed:@"attract_title.png"]];    
+    [self startTimer];
+
     
 }
 
@@ -111,7 +121,64 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SurveyViewController *destinationViewController = [segue destinationViewController];
     destinationViewController.inEnglish = self.inEnglish;
+    [self stopTimer];
     
 }
+
+- (void) startTimer {
+    if (self.timeoutTimer == nil) {
+        self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(rotateLanguageElements) userInfo:nil repeats:YES];
+        NSLog(@"TIMER STARTED");
+    } else {
+        NSLog(@"DUPLICATE TIMERS!");
+    }
+}
+
+- (void) stopTimer {
+    if (self.timeoutTimer) {
+        [self.timeoutTimer invalidate];
+        self.timeoutTimer = nil;
+    }
+    NSLog(@"TIMER STOPPED");
+}
+
+- (void)rotateLanguageElements {
+    // NSLog(@"rotating language text");
+    
+    if ([self.titleImage.image isEqual:[UIImage imageNamed:@"attract_title.png"]]) {
+        // NSLog(@"title is english, rotating to spanish");
+        
+        [UIView animateWithDuration:.3 animations:^{
+            self.titleImage.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self.titleImage setImage:[UIImage imageNamed:@"attract_title_ES.png"]];
+            
+            [UIView animateWithDuration:.3 animations:^{
+                self.titleImage.alpha = 1;
+            }];
+        }];
+         
+        
+    } else {
+        // NSLog(@"title is spanish, rotating to english");
+        
+        [UIView animateWithDuration:.3 animations:^{
+            self.titleImage.alpha = 0;
+        } completion:^(BOOL finished) {
+            [self.titleImage setImage:[UIImage imageNamed:@"attract_title.png"]];
+            
+            [UIView animateWithDuration:.3 animations:^{
+                self.titleImage.alpha = 1;
+            }];
+        }];
+
+
+    }
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 
 @end

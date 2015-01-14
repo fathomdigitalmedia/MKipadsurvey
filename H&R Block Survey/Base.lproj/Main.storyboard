@@ -27,31 +27,31 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_bg2.png" translatesAutoresizingMaskIntoConstraints="NO" id="6vF-LB-Ux5">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="bIG-bf-DmZ">
-                                <rect key="frame" x="48" y="89" width="680" height="311"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bIG-bf-DmZ">
+                                <rect key="frame" x="48" y="70" width="680" height="252"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_choose_lang.png" translatesAutoresizingMaskIntoConstraints="NO" id="u05-lD-0DI">
-                                <rect key="frame" x="223" y="419" width="331" height="41"/>
+                                <rect key="frame" x="175" y="335" width="426" height="69"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="OWj-ff-JX0">
                                 <rect key="frame" x="42" y="885" width="111" height="111"/>
                             </imageView>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEJ-cV-VeA">
-                                <rect key="frame" x="564" y="637" width="164" height="98"/>
-                                <state key="normal" image="attract_english.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="languageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxp-BO-kQX"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ev-un-93S">
-                                <rect key="frame" x="48" y="637" width="164" height="98"/>
+                                <rect key="frame" x="204" y="390" width="164" height="98"/>
                                 <state key="normal" image="attract_spanish.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="languageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="idc-HR-Q6b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEJ-cV-VeA">
+                                <rect key="frame" x="396" y="390" width="164" height="98"/>
+                                <state key="normal" image="attract_english.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="languageButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yxp-BO-kQX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -106,9 +106,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.4431372549" green="0.70588235290000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button hidden="YES" opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODz-JW-RwG">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ODz-JW-RwG">
                                 <rect key="frame" x="305" y="869" width="158" height="91"/>
-                                <state key="normal" image="survey_next.png">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="1589" y="300"/>
         </scene>
-        <!--View Controller-->
+        <!--Thank You View Controller-->
         <scene sceneID="hdW-fz-5T3">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="Jd3-h9-6aA" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="Jd3-h9-6aA" customClass="ThankYouViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nZr-5w-t60"/>
                         <viewControllerLayoutGuide type="bottom" id="lnh-ja-4vJ"/>
@@ -157,12 +157,10 @@
     </scenes>
     <resources>
         <image name="attract_bg2.png" width="768" height="1024"/>
-        <image name="attract_choose_lang.png" width="330" height="40"/>
+        <image name="attract_choose_lang.png" width="425" height="68"/>
         <image name="attract_english.png" width="164" height="98"/>
         <image name="attract_logo.png" width="111" height="111"/>
         <image name="attract_spanish.png" width="164" height="98"/>
-        <image name="attract_title.png" width="679" height="310"/>
         <image name="survey_bg.png" width="768" height="1024"/>
-        <image name="survey_next.png" width="158" height="91"/>
     </resources>
 </document>

@@ -37,6 +37,20 @@
     self.surveyButtons = [[NSMutableArray alloc] init];
     self.dataString = [[NSMutableString alloc] initWithString:self.survey.surveyDateTaken];
     [self.dataString appendString:self.survey.UID];
+    
+    NSString *langCode = [[NSString alloc] init];
+    
+    if (self.inEnglish) {
+        langCode = @"EN,";
+        [self.surveyNextButton setBackgroundImage:[UIImage imageNamed:@"survey_next.png"] forState:UIControlStateNormal];
+        self.surveyNextButton.hidden = YES;
+    } else {
+        langCode = @"ES,";
+        [self.surveyNextButton setBackgroundImage:[UIImage imageNamed:@"survey_next_ES.png"] forState:UIControlStateNormal];
+            self.surveyNextButton.hidden = YES;
+    }
+    
+    [self.dataString appendString:langCode];
     self.csvWriter = [[CSVData alloc] init];
         
     [self updateUI];
@@ -46,6 +60,7 @@
 - (void) updateUI {
     [self updateQuestionLabels];
     [self updateQuestionOptions];
+    self.surveyNextButton.hidden = YES;
 }
 
 - (void)updateQuestionLabels {
@@ -298,6 +313,9 @@
     
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
 
 @end

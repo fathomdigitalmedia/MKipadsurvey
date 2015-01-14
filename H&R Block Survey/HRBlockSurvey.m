@@ -36,8 +36,8 @@
                                  nil];
         
         self.spanishQuestions = [NSArray arrayWithObjects:
-                                 @"Cuando tu recibes un tax refundo, typicamente que compre? Por favor selecte todos que applicar.",
-                                 @"Que tipo de cosa \"divertida\" comprare con su tax refundo?",
+                                 @"¿Cómo te gastas típicamente tu reembolso de taxes? Selecciona todas la opciones que apliquen.",
+                                 @"¿Si decidieras comprarte algo \"divertido\" con tu reembolso, ¿qué comprarías?",
                                  nil];
 
         self.surveyQuestions = [NSArray arrayWithObjects:
@@ -68,24 +68,24 @@
                                  nil];
         
         self.spanishOptionsQ0 = [NSArray arrayWithObjects:
-                                 @"ESP: I use my refund to pay off debt (e.g., student loands, credit card debt)",
-                                 @"ESP: I spend my refund on something practical (e.g., utility bills, groceries, home repairs)",
-                                 @"ESP: I splurge on something for myself",
-                                 @"ESP: I splurge on something for my family/friends",
-                                 @"ESP: I put my refund in savings",
-                                 @"ESP: Other",
-                                 @"ESP: I have never received a tax refund",
+                                 @"Pagando deudas (balances de tarjetas de crédito, préstamos\nestudiantiles, etc.)",
+                                 @"En algo práctico (facturas de servicios públicos, comestibles, etc.)",
+                                 @"En algo especial para mí",
+                                 @"En algo especial para mi familia/mis amigos",
+                                 @"Ahorros",
+                                 @"En otra cosa",
+                                 @"Nunca he recibido un reembolso",
                                  nil];
         
         self.spanishOptionsQ1 = [NSArray arrayWithObjects:
-                                 @"ESP: A vacation for me and my family",
-                                 @"ESP: A new electronic device (e.g., television, smartphone, computer, tablet)",
-                                 @"ESP: A new outfit or accessory",
-                                 @"ESP: A surprise gift for a family member or friend",
-                                 @"ESP: A new car",
-                                 @"ESP: Sports or concert tickets",
-                                 @"ESP: Other",
-                                 @"ESP: None",
+                                 @"Unas vacaciones",
+                                 @"Un dispositivo electrónico",
+                                 @"Ropa o accesorios",
+                                 @"Un regalo sorpresa para algún familiar/amigo",
+                                 @"Un auto",
+                                 @"Boletos para un evento deportivo o un concierto",
+                                 @"Otra cosa",
+                                 @"Nada",
                                  nil];
         
         self.spanishOptions = [NSArray arrayWithObjects:
