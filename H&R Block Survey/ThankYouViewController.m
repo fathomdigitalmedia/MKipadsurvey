@@ -78,6 +78,9 @@
     }];
     
 }
+- (IBAction)thankYouExitButton:(UIButton *)sender {
+    [self animateOff];
+}
 
 - (void)unwindToAttractor {
     // NSLog(@"exiting to attractor view");
