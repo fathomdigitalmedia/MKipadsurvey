@@ -89,7 +89,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="64d-D7-dcX">
-                                <rect key="frame" x="0.0" y="132" width="768" height="693"/>
+                                <rect key="frame" x="50" y="132" width="768" height="693"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="QUESTION X OF Y" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meC-pf-8up">
                                         <rect key="frame" x="41" y="36" width="150" height="21"/>
@@ -123,7 +123,7 @@
                     <connections>
                         <outlet property="questionLabel" destination="SXX-XX-akR" id="sBC-rP-FgN"/>
                         <outlet property="questionNumberLabel" destination="meC-pf-8up" id="H3C-Mn-k0c"/>
-                        <outlet property="surveyBG" destination="64d-D7-dcX" id="NfO-p6-sp5"/>
+                        <outlet property="surveyBG" destination="KCR-Ah-ars" id="TSO-Li-p3F"/>
                         <outlet property="surveyNextButton" destination="ODz-JW-RwG" id="yW3-nz-8rg"/>
                         <outlet property="surveyView" destination="64d-D7-dcX" id="kAg-jQ-X20"/>
                         <segue destination="Jd3-h9-6aA" kind="show" identifier="segueToThankYou" id="a9M-WB-O6L"/>
@@ -131,7 +131,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cio-JO-cL2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1589" y="300"/>
+            <point key="canvasLocation" x="1651" y="390"/>
         </scene>
         <!--Thank You View Controller-->
         <scene sceneID="hdW-fz-5T3">
@@ -144,15 +144,37 @@
                     <view key="view" contentMode="scaleToFill" id="gHG-WG-xJU">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_bg2.png" translatesAutoresizingMaskIntoConstraints="NO" id="crk-tb-mPJ">
+                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="attract_logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Pw-ld-tuf">
+                                <rect key="frame" x="42" y="885" width="111" height="111"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thanks_title.png" translatesAutoresizingMaskIntoConstraints="NO" id="lkN-Jb-cpu">
+                                <rect key="frame" x="102" y="89" width="564" height="97"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="thanks_title2.png" translatesAutoresizingMaskIntoConstraints="NO" id="lrT-NM-vsi">
+                                <rect key="frame" x="206" y="241" width="357" height="179"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="iPad"/>
+                    <connections>
+                        <outlet property="backgroundImage" destination="crk-tb-mPJ" id="aaF-Ym-x79"/>
+                        <outlet property="logoImage" destination="4Pw-ld-tuf" id="bPB-CW-nOW"/>
+                        <outlet property="title2Image" destination="lrT-NM-vsi" id="q2l-mB-XDZ"/>
+                        <outlet property="titleImage" destination="lkN-Jb-cpu" id="hPc-J5-8QY"/>
+                        <segue destination="Thu-cy-qut" kind="unwind" identifier="unwindToStart" unwindAction="prepareForReset:" id="nKq-zk-juu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nIa-Dh-P9t" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Thu-cy-qut" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2629" y="300"/>
+            <point key="canvasLocation" x="2619" y="390"/>
         </scene>
     </scenes>
     <resources>
@@ -162,5 +184,7 @@
         <image name="attract_logo.png" width="111" height="111"/>
         <image name="attract_spanish.png" width="164" height="98"/>
         <image name="survey_bg.png" width="768" height="1024"/>
+        <image name="thanks_title.png" width="564" height="96"/>
+        <image name="thanks_title2.png" width="357" height="178"/>
     </resources>
 </document>

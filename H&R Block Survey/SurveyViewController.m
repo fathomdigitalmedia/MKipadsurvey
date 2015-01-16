@@ -57,7 +57,9 @@
     
 }
 
-- (void) updateUI {
+- (void)updateUI {
+    NSLog(@"survey view x,alpha = %f,%f", self.surveyView.frame.origin.x, self.surveyView.alpha);
+    
     [self updateQuestionLabels];
     [self updateQuestionOptions];
     self.surveyNextButton.hidden = YES;
@@ -141,12 +143,12 @@
         // remove trailing pipe character from end of selected options
         [self.dataString replaceCharactersInRange:NSMakeRange(self.dataString.length - 1, 1) withString:@","];
         
-        // NSLog(@"dataString contents: %@", self.dataString);
+        NSLog(@"dataString contents: %@", self.dataString);
        
         [self updateUI];
         
     } else {
-        // NSLog(@"last question");
+        NSLog(@"last question");
 
         // update self.dataString for Q2
         int index = 0;
@@ -166,7 +168,9 @@
         [self.csvWriter updateCSV:self.survey.surveyDataFile withEntry:self.dataString];
         
         // jump to thank you screen
-        [self performSelector:@selector(beginSegue:) withObject:sender afterDelay:.6];
+        
+        [self animateOff];
+        
     }
 }
 
@@ -273,14 +277,15 @@
     
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    CGRect surveyViewFrame = self.surveyView.frame;
+    surveyViewFrame.origin.x = 1000;
+    self.surveyView.frame = surveyViewFrame;
+
+}
+
 - (void)viewDidAppear:(BOOL)animated {
-
-    // check that screen visual elements are visible and in the proper x,y positions (after segue unwind)
-    // [ where best to do this? ]d
-    
-
     // animate elements onscreen
-    
     [self animateOnLoad];
 
 }
@@ -288,28 +293,47 @@
 - (void)animateOnLoad {
     // slide in green background from right
     
-    [UIView animateWithDuration:.25 animations:^{
-        CGRect surveyBGFrame = self.surveyBG.frame;
-        surveyBGFrame.origin.x = 0;
-        self.surveyBG.frame = surveyBGFrame;
-        // self.surveyBG.alpha = 1;
-
-    }completion:^(BOOL finished) {
-        // slide in survey question and options from left
+    NSLog(@"animate on load called");
     
-        
+    [UIView animateWithDuration:.3 animations:^{
+    
+        CGRect surveyViewFrame = self.surveyView.frame;
+        surveyViewFrame.origin.x = 0;
+        self.surveyView.frame = surveyViewFrame;
+    
     }];
     
 
 }
 
-- (void)beginSegue:(UIButton *)sender {
-    [self performSegueWithIdentifier:@"segueToThankYou" sender:sender];
+- (void)animateOff {
+    
+    [UIView animateWithDuration:.3 animations:^{
+        
+        CGRect surveyViewFrame = self.surveyView.frame;
+        surveyViewFrame.origin.x -= 1000;
+        self.surveyView.frame = surveyViewFrame;
+        
+    }
+             completion:^(BOOL finished) {
+                 
+                 [UIView animateWithDuration:.3 animations:^{
+                     self.surveyBG.alpha = 0;
+                 }
+                                  completion:^(BOOL finished) {
+                                      self.view.hidden = YES;
+                                      [self performSelector:@selector(beginSegue) withObject:nil afterDelay:.3];
+                                  }];
+             }];
+}
+
+- (void)beginSegue {
+    [self performSegueWithIdentifier:@"segueToThankYou" sender:nil];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     SurveyViewController *destinationViewController = [segue destinationViewController];
-    // destinationViewController.inEnglish = self.inEnglish;
+    destinationViewController.inEnglish = self.inEnglish;
     
 }
 

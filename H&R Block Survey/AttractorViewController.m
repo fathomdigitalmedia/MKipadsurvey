@@ -19,8 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
 
 @property (strong, nonatomic) NSTimer *timeoutTimer;
-// @property (strong, nonatomic) NSDate *lastTimeoutResetEvent;
-// @property NSTimeInterval timeoutLength;
 
 
 
@@ -29,12 +27,11 @@
 @implementation AttractorViewController
 
 - (void)viewWillAppear:(BOOL)animated {
-    // confirm that attract screen visual elements are visible and in the proper x,y positions (after segue unwind)
     
     CGRect titleFrame = self.titleImage.frame;
     CGRect logoFrame = self.logoImage.frame;
     CGRect bgFrame = self.backgroundImage.frame;
-    titleFrame.origin.y = 89;
+    titleFrame.origin.y = 70;
     logoFrame.origin.y = 885;
     bgFrame.origin.y = 0;
     self.titleImage.frame = titleFrame;
@@ -43,16 +40,17 @@
     self.titleImage.alpha = 1;
     self.backgroundImage.alpha = 1;
     self.logoImage.alpha = 1;
-    
-    // [self startTimer];
+    self.englishButton.alpha = 1;
+    self.spanishButton.alpha = 1;
+    self.chooseLanguageImage.alpha = 1;
+    [self.titleImage setImage:[UIImage imageNamed:@"attract_title.png"]];
+
+    [self startTimer];
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self.titleImage setImage:[UIImage imageNamed:@"attract_title.png"]];    
-    [self startTimer];
 
     
 }
@@ -127,7 +125,7 @@
 
 - (void) startTimer {
     if (self.timeoutTimer == nil) {
-        self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(rotateLanguageElements) userInfo:nil repeats:YES];
+        self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(rotateLanguageElements) userInfo:nil repeats:YES];
         NSLog(@"TIMER STARTED");
     } else {
         NSLog(@"DUPLICATE TIMERS!");
@@ -174,6 +172,12 @@
 
 
     }
+}
+
+-(IBAction)prepareForReset:(UIStoryboardSegue *)sender {
+    NSLog(@"prepareForReset called");
+    // [self startTimer];
+
 }
 
 - (BOOL)prefersStatusBarHidden {

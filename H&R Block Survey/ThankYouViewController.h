@@ -10,4 +10,6 @@
 
 @interface ThankYouViewController : UIViewController
 
+@property BOOL inEnglish;
+
 @end
