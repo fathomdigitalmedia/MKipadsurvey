@@ -58,11 +58,15 @@
 }
 
 - (void)updateUI {
-    NSLog(@"survey view x,alpha = %f,%f", self.surveyView.frame.origin.x, self.surveyView.alpha);
     
     [self updateQuestionLabels];
     [self updateQuestionOptions];
     self.surveyNextButton.hidden = YES;
+    
+    if (self.currentQuestion < self.totalQuestions) {
+        [self performSelector:@selector(animateOn) withObject:nil afterDelay:.4];
+    }
+    
 }
 
 - (void)updateQuestionLabels {
@@ -143,12 +147,17 @@
         // remove trailing pipe character from end of selected options
         [self.dataString replaceCharactersInRange:NSMakeRange(self.dataString.length - 1, 1) withString:@","];
         
-        NSLog(@"dataString contents: %@", self.dataString);
-       
-        [self updateUI];
+        // NSLog(@"dataString contents: %@", self.dataString);
+        
+        [self animateOff];
+        
+        [self performSelector:@selector(updateUI) withObject:nil afterDelay:.1];
+
+        // [self updateUI];
         
     } else {
-        NSLog(@"last question");
+        // NSLog(@"last question");
+        self.currentQuestion++;
 
         // update self.dataString for Q2
         int index = 0;
@@ -277,25 +286,10 @@
     
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    CGRect surveyViewFrame = self.surveyView.frame;
-    surveyViewFrame.origin.x = 1000;
-    self.surveyView.frame = surveyViewFrame;
+- (void)animateOn {
+    // slide in survey view from right
 
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    // animate elements onscreen
-    [self animateOnLoad];
-
-}
-
-- (void)animateOnLoad {
-    // slide in green background from right
-    
-    NSLog(@"animate on load called");
-    
-    [UIView animateWithDuration:.3 animations:^{
+    [UIView animateWithDuration:.25 animations:^{
     
         CGRect surveyViewFrame = self.surveyView.frame;
         surveyViewFrame.origin.x = 0;
@@ -304,26 +298,33 @@
     }];
     
 
+    
+
 }
 
 - (void)animateOff {
-    
+    // slide off survey view to left
+
     [UIView animateWithDuration:.3 animations:^{
         
         CGRect surveyViewFrame = self.surveyView.frame;
-        surveyViewFrame.origin.x -= 1000;
+        surveyViewFrame.origin.x = -1000;
         self.surveyView.frame = surveyViewFrame;
         
     }
              completion:^(BOOL finished) {
                  
-                 [UIView animateWithDuration:.3 animations:^{
-                     self.surveyBG.alpha = 0;
+                 // after last question fade and animate to thank you segue
+                 
+                 if (self.currentQuestion + 1 > self.totalQuestions) {
+                     [UIView animateWithDuration:.3 animations:^{
+                         self.surveyBG.alpha = 0;
+                     }
+                                      completion:^(BOOL finished) {
+                                          self.view.hidden = YES;
+                                          [self performSelector:@selector(beginSegue) withObject:nil afterDelay:.3];
+                                      }];
                  }
-                                  completion:^(BOOL finished) {
-                                      self.view.hidden = YES;
-                                      [self performSelector:@selector(beginSegue) withObject:nil afterDelay:.3];
-                                  }];
              }];
 }
 

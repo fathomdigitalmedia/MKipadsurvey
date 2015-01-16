@@ -18,6 +18,12 @@
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Brandon_bld.otf</string>
+		<string>Brandon_reg.otf</string>
+		<string>Brandon_blk.otf</string>
+	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -28,6 +34,8 @@
 	<string>????</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
+	<key>UIFileSharingEnabled</key>
+	<true/>
 	<key>UIStatusBarHidden~ipad</key>
 	<true/>
 	<key>CFBundleDevelopmentRegion</key>
@@ -36,12 +44,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-	</array>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Brandon_bld.otf</string>
-		<string>Brandon_reg.otf</string>
-		<string>Brandon_blk.otf</string>
 	</array>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>

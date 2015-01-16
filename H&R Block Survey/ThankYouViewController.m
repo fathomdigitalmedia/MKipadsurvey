@@ -42,7 +42,7 @@
 - (void)startTimer {
     if (self.timeoutTimer == nil) {
         self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:5 target:self selector:@selector(animateOff) userInfo:nil repeats:NO];
-        NSLog(@"TY TIMER STARTED");
+        // NSLog(@"TY TIMER STARTED");
     } else {
         NSLog(@"DUPLICATE TIMERS!");
     }
@@ -53,7 +53,7 @@
         [self.timeoutTimer invalidate];
         self.timeoutTimer = nil;
     }
-    NSLog(@"TY TIMER STOPPED");
+    // NSLog(@"TY TIMER STOPPED");
 }
 
 - (void)animateOff {
@@ -80,7 +80,7 @@
 }
 
 - (void)unwindToAttractor {
-    NSLog(@"exiting to attractor view");
+    // NSLog(@"exiting to attractor view");
     
     [self performSegueWithIdentifier:@"unwindToStart" sender:self];
 }

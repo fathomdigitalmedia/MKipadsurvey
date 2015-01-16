@@ -31,19 +31,21 @@
     CGRect titleFrame = self.titleImage.frame;
     CGRect logoFrame = self.logoImage.frame;
     CGRect bgFrame = self.backgroundImage.frame;
-    titleFrame.origin.y = 70;
-    logoFrame.origin.y = 885;
-    bgFrame.origin.y = 0;
+    titleFrame.origin.y = -1000;
+    logoFrame.origin.y = 2000;
+    bgFrame.origin.y = 2000;
     self.titleImage.frame = titleFrame;
     self.logoImage.frame = logoFrame;
     self.backgroundImage.frame = bgFrame;
     self.titleImage.alpha = 1;
     self.backgroundImage.alpha = 1;
     self.logoImage.alpha = 1;
-    self.englishButton.alpha = 1;
-    self.spanishButton.alpha = 1;
-    self.chooseLanguageImage.alpha = 1;
+    self.englishButton.alpha = 0;
+    self.spanishButton.alpha = 0;
+    self.chooseLanguageImage.alpha = 0;
     [self.titleImage setImage:[UIImage imageNamed:@"attract_title.png"]];
+    
+    [self animateOn];
 
     [self startTimer];
     
@@ -52,7 +54,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+}
+
+- (void)animateOn {
     
+    [UIView animateWithDuration:.7 animations:^{
+
+        CGRect titleFrame = self.titleImage.frame;
+        CGRect logoFrame = self.logoImage.frame;
+        CGRect bgFrame = self.backgroundImage.frame;
+        titleFrame.origin.y = 70;
+        logoFrame.origin.y = 885;
+        bgFrame.origin.y = 0;
+        self.titleImage.frame = titleFrame;
+        self.logoImage.frame = logoFrame;
+        self.backgroundImage.frame = bgFrame;
+        self.englishButton.alpha = 1;
+        self.spanishButton.alpha = 1;
+        self.chooseLanguageImage.alpha = 1;
+
+            
+    }];
+
 }
 
 - (IBAction)languageButtonPressed:(UIButton *)sender {
@@ -123,21 +146,21 @@
     
 }
 
-- (void) startTimer {
+- (void)startTimer {
     if (self.timeoutTimer == nil) {
         self.timeoutTimer = [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(rotateLanguageElements) userInfo:nil repeats:YES];
-        NSLog(@"TIMER STARTED");
+        // NSLog(@"TIMER STARTED");
     } else {
         NSLog(@"DUPLICATE TIMERS!");
     }
 }
 
-- (void) stopTimer {
+- (void)stopTimer {
     if (self.timeoutTimer) {
         [self.timeoutTimer invalidate];
         self.timeoutTimer = nil;
     }
-    NSLog(@"TIMER STOPPED");
+    // NSLog(@"TIMER STOPPED");
 }
 
 - (void)rotateLanguageElements {
@@ -175,8 +198,9 @@
 }
 
 -(IBAction)prepareForReset:(UIStoryboardSegue *)sender {
-    NSLog(@"prepareForReset called");
-    // [self startTimer];
+    // this method needs to exist in order to enable segue unwind from thank you view
+    // NSLog(@"prepareForReset called");
+    
 
 }
 
