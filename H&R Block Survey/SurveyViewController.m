@@ -82,7 +82,7 @@
         ofString = @"DE";
     }
     
-    self.questionNumberLabel.text = [NSString stringWithFormat:@"%@ %d %@ %d", questionString, self.currentQuestion + 1, ofString, self.totalQuestions];
+    self.questionNumberLabel.text = [NSString stringWithFormat:@"%@ %lu %@ %lu", questionString, self.currentQuestion + 1, ofString, (unsigned long)self.totalQuestions];
     self.questionLabel.text = self.survey.surveyQuestions[self.inEnglish][self.currentQuestion];
 }
 

@@ -118,7 +118,7 @@
     
     NSDate *now = [NSDate date];
     NSUInteger tmpUID = [now timeIntervalSince1970];
-    NSString *uid = [NSString stringWithFormat:@"%d,", tmpUID];
+    NSString *uid = [NSString stringWithFormat:@"%lu,", (unsigned long)tmpUID];
     
     return uid;
 }
